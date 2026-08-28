@@ -470,3 +470,11 @@ Setting | Description
 `student_physical_cache_frames` | Student physical KV capacity.
 `layer_recall_init_ckpt` | Optional strict CHPM v3 initialization checkpoint for a new run; it does not restore optimizer or progress.
 `max_iters` | Number of optimizer steps per rank.
+
+---
+
+## 🤗 Acknowledgement
+
+- [LongLive](https://github.com/NVlabs/LongLive/tree/v1.0): the original long-video generation framework and codebase we build upon. Thanks for their wonderful work.
+- [LongLive-2.0](https://github.com/NVlabs/LongLive): the training and inference infrastructure used as our primary backbone. Thanks for their wonderful work.
+- [Wan](https://github.com/Wan-Video/Wan2.2): the base video generation model used in this work. Thanks for their wonderful work.
