@@ -52,6 +52,10 @@ A brief selection of LayerRecall results is shown below. The previews autoplay a
   </tr>
 </table>
 
+<p align="center">
+  <img src="assets/Figure_5_v2.png" width="100%" alt="LayerRecall qualitative results across three-shot long-video generation examples">
+</p>
+
 ## 📊 Primary Evaluation
 
 <p align="center">
