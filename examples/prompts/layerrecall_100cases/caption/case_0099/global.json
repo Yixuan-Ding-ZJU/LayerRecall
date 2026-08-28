@@ -1,0 +1,93 @@
+{
+  "case_id": "case_0099",
+  "title_zh": "沙漠营帐内部布局",
+  "memory_axis": "scene_layout",
+  "primary_subject_zh": "整座营帐内部",
+  "primary_anchor_zh": "中央织毯、沿帐壁的低坐垫区和入口旁大型灯笼所构成的整体布局",
+  "story_reason_zh": "营帐入口帘为遮挡沙漠微风而缓慢落下，随后重新掀开",
+  "shot_design": [
+    {
+      "shot": 1,
+      "role_zh": "建立主体与主要视觉锚点",
+      "outline_zh": "整座营帐内部在日落沙漠营帐内部，保持安静稳定，仅入口帘边轻微摆动。",
+      "subject_state": "visible",
+      "main_action_zh": "保持安静稳定，仅入口帘边轻微摆动",
+      "anchor_visibility_zh": "中央织毯、沿帐壁的低坐垫区和入口旁大型灯笼所构成的整体布局占据足够画面面积并清楚可见。",
+      "duration_blocks": 24
+    },
+    {
+      "shot": 2,
+      "role_zh": "形成长期记忆间隔",
+      "outline_zh": "宽大的营帐入口帘缓慢落下并遮住内部，画面只留下帐外沙地与木桩",
+      "subject_state": "visible_to_occluded",
+      "main_action_zh": "宽大的营帐入口帘缓慢落下并遮住内部，画面只留下帐外沙地与木桩",
+      "connection_to_story_zh": "门、屏风或入口帘的开合符合场景用途，动作缓慢，镜头保持固定。",
+      "remaining_visual_zh": "营帐外侧的空旷沙地与木桩",
+      "duration_blocks": 12
+    },
+    {
+      "shot": 3,
+      "role_zh": "重新呈现主体并触发长期召回",
+      "outline_zh": "营帐入口帘缓慢掀开，重新露出完整营帐布局",
+      "subject_state": "occluded_to_visible",
+      "main_action_zh": "营帐入口帘缓慢掀开，重新露出完整营帐布局",
+      "visual_correspondence_zh": "Shot 3 重新展示中央织毯、沿帐壁的低坐垫区和入口旁大型灯笼所构成的整体布局，以整体空间关系作为唯一验收目标。",
+      "duration_blocks": 12
+    }
+  ],
+  "generation_prompts": [
+    {
+      "shot": 1,
+      "file": "0.json",
+      "caption": "A fixed wide shot frames a woven rug at the center, a low cushion area along the tent wall, and a large lantern beside the entrance inside a desert tent at sunset. The edge of the entrance cloth moves gently."
+    },
+    {
+      "shot": 2,
+      "file": "1.json",
+      "caption": "A fixed wide shot looks through an open entrance onto a woven rug at the center, a low cushion area along the tent wall, and a large lantern beside the entrance inside a desert tent at sunset. The broad entrance flap of the tent slowly closes across the entrance until the room is fully hidden, leaving only the open sand and the wooden post outside the tent in view."
+    },
+    {
+      "shot": 3,
+      "file": "2.json",
+      "caption": "A fixed wide shot holds on the open sand and the wooden post outside the tent. The broad entrance flap of the tent slowly opens, revealing a woven rug at the center, a low cushion area along the tent wall, and a large lantern beside the entrance inside a desert tent at sunset."
+    }
+  ],
+  "review_constraints": {
+    "fixed_camera_all_shots": true,
+    "one_main_action_per_shot": true,
+    "shot_2_target_absent": false,
+    "single_memory_axis": true,
+    "duration_blocks": [
+      24,
+      12,
+      12
+    ],
+    "explicit_exit_action_in_shot_2": true,
+    "explicit_return_action_in_shot_3": true,
+    "shot_2_end_state_target_absent": false,
+    "transition_is_natural_and_non_abrupt": true,
+    "one_primary_transition_action_plus_optional_ambient_motion": true,
+    "shot_2_end_state_layout_occluded": true,
+    "shorter_memory_gap_than_v2": true,
+    "captions_unchanged_from_v2": true,
+    "longer_memory_gap_than_v3": true,
+    "memory_gap_intermediate_between_v2_and_v3": true,
+    "captions_unchanged_from_v3": true
+  },
+  "version": "v4_intermediate_memory_gap",
+  "adapted_from_bank_root_relative": "../prompt_bank_v3/caption/case_0099",
+  "transition_design": {
+    "mode": "natural_barrier_close_open",
+    "shot_2_exit_action_zh": "宽大的营帐入口帘缓慢落下并遮住内部，画面只留下帐外沙地与木桩",
+    "shot_2_remaining_visual_zh": "营帐外侧的空旷沙地与木桩",
+    "shot_3_return_action_zh": "营帐入口帘缓慢掀开，重新露出完整营帐布局",
+    "design_note_zh": "Scene/layout 无法自行离场，因此 Shot 2 用自然遮挡结构缓慢关闭，Shot 3 用对应开启动作重新露出整体布局。"
+  },
+  "duration_design": {
+    "shot_1_blocks": 24,
+    "shot_2_blocks": 12,
+    "shot_3_blocks": 12,
+    "total_blocks": 48,
+    "rationale_zh": "Shot 1 保持 24 blocks 建立主体与视觉锚点；Shot 2 调整为 12 blocks，使主体缺席区间介于 V2 的 16 blocks 与 V3 的 8 blocks 之间；Shot 3 调整为 12 blocks，在总长 48 blocks 下形成中等记忆间隔难度。"
+  }
+}

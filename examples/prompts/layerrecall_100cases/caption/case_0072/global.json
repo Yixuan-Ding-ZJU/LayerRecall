@@ -1,0 +1,92 @@
+{
+  "case_id": "case_0072",
+  "title_zh": "石狮雕像",
+  "memory_axis": "object_permanence",
+  "primary_subject_zh": "大型石狮雕像",
+  "primary_anchor_zh": "低伏轮廓、宽阔鬃毛和浅灰石质表面",
+  "story_reason_zh": "雕像被移去清理底座，随后放回庭院台座",
+  "shot_design": [
+    {
+      "shot": 1,
+      "role_zh": "建立主体与主要视觉锚点",
+      "outline_zh": "大型石狮雕像在竹园入口的宽台座上，保持静置，表面水滴缓慢滑落。",
+      "subject_state": "visible",
+      "main_action_zh": "保持静置，表面水滴缓慢滑落",
+      "anchor_visibility_zh": "低伏轮廓、宽阔鬃毛和浅灰石质表面占据足够画面面积并清楚可见。",
+      "duration_blocks": 24
+    },
+    {
+      "shot": 2,
+      "role_zh": "形成长期记忆间隔",
+      "outline_zh": "园丁利用隐藏滚轮缓慢将石狮移下台座并推出庭院入口；随后呈现空台座和竹园入口。",
+      "subject_state": "visible_to_absent",
+      "main_action_zh": "园丁利用隐藏滚轮缓慢将石狮移下台座并推出庭院入口",
+      "connection_to_story_zh": "离场动作与原有故事原因对应，动作缓慢、短距离，镜头保持固定。",
+      "remaining_visual_zh": "空台座和竹园入口",
+      "duration_blocks": 12
+    },
+    {
+      "shot": 3,
+      "role_zh": "重新呈现主体并触发长期召回",
+      "outline_zh": "园丁缓慢将石狮推回画面并停回宽台座上",
+      "subject_state": "absent_to_visible",
+      "main_action_zh": "园丁缓慢将石狮推回画面并停回宽台座上",
+      "visual_correspondence_zh": "Shot 3 重新清楚呈现低伏轮廓、宽阔鬃毛和浅灰石质表面，物件占据足够画面面积。",
+      "duration_blocks": 12
+    }
+  ],
+  "generation_prompts": [
+    {
+      "shot": 1,
+      "file": "0.json",
+      "caption": "A fixed medium shot frames a large pale-stone lion statue with a low body and broad carved mane on a wide plinth at a bamboo garden entrance. A drop of water slides slowly across the stone surface. Soft overcast light reveals the statue's broad silhouette."
+    },
+    {
+      "shot": 2,
+      "file": "1.json",
+      "caption": "A fixed medium shot shows a large pale-stone lion statue with a low body and broad carved mane on a wide plinth at a bamboo garden entrance. A gardener slowly rolls the lion statue on a concealed wheeled base off the plinth and through the garden entrance until it leaves the frame. The fixed camera then holds on the empty wide plinth and the bamboo garden entrance. Bamboo leaves move gently."
+    },
+    {
+      "shot": 3,
+      "file": "2.json",
+      "caption": "A fixed medium shot holds on the empty wide plinth and the bamboo garden entrance. A gardener slowly rolls the large pale-stone lion statue with a low body and broad carved mane back through the entrance and stops it on a wide plinth at a bamboo garden entrance."
+    }
+  ],
+  "review_constraints": {
+    "fixed_camera_all_shots": true,
+    "one_main_action_per_shot": true,
+    "shot_2_target_absent": true,
+    "single_memory_axis": true,
+    "duration_blocks": [
+      24,
+      12,
+      12
+    ],
+    "explicit_exit_action_in_shot_2": true,
+    "explicit_return_action_in_shot_3": true,
+    "shot_2_end_state_target_absent": true,
+    "transition_is_natural_and_non_abrupt": true,
+    "one_primary_transition_action_plus_optional_ambient_motion": true,
+    "shorter_memory_gap_than_v2": true,
+    "captions_unchanged_from_v2": true,
+    "longer_memory_gap_than_v3": true,
+    "memory_gap_intermediate_between_v2_and_v3": true,
+    "captions_unchanged_from_v3": true
+  },
+  "version": "v4_intermediate_memory_gap",
+  "adapted_from_bank_root_relative": "../prompt_bank_v3/caption/case_0072",
+  "transition_design": {
+    "mode": "assisted_object_exit_return",
+    "shot_2_exit_action_zh": "园丁利用隐藏滚轮缓慢将石狮移下台座并推出庭院入口",
+    "shot_2_remaining_visual_zh": "空台座和竹园入口",
+    "shot_3_return_action_zh": "园丁缓慢将石狮推回画面并停回宽台座上",
+    "design_note_zh": "Shot 2 在固定镜头内先展示自然离场，再保留背景；Shot 3 用对应动作让主体回到画面。"
+  },
+  "duration_design": {
+    "shot_1_blocks": 24,
+    "shot_2_blocks": 12,
+    "shot_3_blocks": 12,
+    "total_blocks": 48,
+    "rationale_zh": "Shot 1 保持 24 blocks 建立主体与视觉锚点；Shot 2 调整为 12 blocks，使主体缺席区间介于 V2 的 16 blocks 与 V3 的 8 blocks 之间；Shot 3 调整为 12 blocks，在总长 48 blocks 下形成中等记忆间隔难度。"
+  }
+}

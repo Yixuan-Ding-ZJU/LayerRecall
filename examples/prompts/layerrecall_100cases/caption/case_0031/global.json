@@ -1,0 +1,92 @@
+{
+  "case_id": "case_0031",
+  "title_zh": "铜锅咖啡烘焙师",
+  "memory_axis": "subject_identity",
+  "primary_subject_zh": "年轻男咖啡烘焙师",
+  "primary_anchor_zh": "窄脸、浓密黑卷发和焦糖色工作夹克",
+  "story_reason_zh": "他去储藏架取空盘，随后回到烘焙台",
+  "shot_design": [
+    {
+      "shot": 1,
+      "role_zh": "建立主体与主要视觉锚点",
+      "outline_zh": "年轻男咖啡烘焙师在砖墙咖啡工坊的铜锅旁，缓慢搅动浅盘里的咖啡豆。",
+      "subject_state": "visible",
+      "main_action_zh": "缓慢搅动浅盘里的咖啡豆",
+      "anchor_visibility_zh": "窄脸、浓密黑卷发和焦糖色工作夹克占据足够画面面积并清楚可见。",
+      "duration_blocks": 24
+    },
+    {
+      "shot": 2,
+      "role_zh": "形成长期记忆间隔",
+      "outline_zh": "主体经由咖啡工坊门口缓慢走出画面；随后呈现空高脚凳、铜锅和装满咖啡豆的浅盘。",
+      "subject_state": "visible_to_absent",
+      "main_action_zh": "主体经由咖啡工坊门口缓慢走出画面",
+      "connection_to_story_zh": "离场动作与原有故事原因对应，动作缓慢、短距离，镜头保持固定。",
+      "remaining_visual_zh": "空高脚凳、铜锅和装满咖啡豆的浅盘",
+      "duration_blocks": 12
+    },
+    {
+      "shot": 3,
+      "role_zh": "重新呈现主体并触发长期召回",
+      "outline_zh": "主体经由咖啡工坊门口缓慢走回画面，并停回原活动位置",
+      "subject_state": "absent_to_visible",
+      "main_action_zh": "主体经由咖啡工坊门口缓慢走回画面，并停回原活动位置",
+      "visual_correspondence_zh": "Shot 3 重新清楚展示窄脸、浓密黑卷发和焦糖色工作夹克，并保持相近景别与主体占比。",
+      "duration_blocks": 12
+    }
+  ],
+  "generation_prompts": [
+    {
+      "shot": 1,
+      "file": "0.json",
+      "caption": "A fixed medium shot frames a young man with a narrow face, thick black curls, and a caramel-brown work jacket at a copper roasting station in a brick coffee workshop. He slowly stirs coffee beans across a broad shallow tray. Warm copper light gives the workshop a rich, inviting finish."
+    },
+    {
+      "shot": 2,
+      "file": "1.json",
+      "caption": "A fixed medium shot shows a young man with a narrow face, thick black curls, and a caramel-brown work jacket walking slowly through the coffee-workshop doorway until he leaves the frame. The fixed camera then holds on the empty high stool, the copper roaster, and the broad tray of coffee beans. A thin veil of steam rises above the copper roaster."
+    },
+    {
+      "shot": 3,
+      "file": "2.json",
+      "caption": "A fixed medium shot shows a young man with a narrow face, thick black curls, and a caramel-brown work jacket walking slowly back through the coffee-workshop doorway and settling at a copper roasting station in a brick coffee workshop."
+    }
+  ],
+  "review_constraints": {
+    "fixed_camera_all_shots": true,
+    "one_main_action_per_shot": true,
+    "shot_2_target_absent": true,
+    "single_memory_axis": true,
+    "duration_blocks": [
+      24,
+      12,
+      12
+    ],
+    "explicit_exit_action_in_shot_2": true,
+    "explicit_return_action_in_shot_3": true,
+    "shot_2_end_state_target_absent": true,
+    "transition_is_natural_and_non_abrupt": true,
+    "one_primary_transition_action_plus_optional_ambient_motion": true,
+    "shorter_memory_gap_than_v2": true,
+    "captions_unchanged_from_v2": true,
+    "longer_memory_gap_than_v3": true,
+    "memory_gap_intermediate_between_v2_and_v3": true,
+    "captions_unchanged_from_v3": true
+  },
+  "version": "v4_intermediate_memory_gap",
+  "adapted_from_bank_root_relative": "../prompt_bank_v3/caption/case_0031",
+  "transition_design": {
+    "mode": "natural_walk_exit_return",
+    "shot_2_exit_action_zh": "主体经由咖啡工坊门口缓慢走出画面",
+    "shot_2_remaining_visual_zh": "空高脚凳、铜锅和装满咖啡豆的浅盘",
+    "shot_3_return_action_zh": "主体经由咖啡工坊门口缓慢走回画面，并停回原活动位置",
+    "design_note_zh": "Shot 2 在固定镜头内先展示自然离场，再保留背景；Shot 3 用对应动作让主体回到画面。"
+  },
+  "duration_design": {
+    "shot_1_blocks": 24,
+    "shot_2_blocks": 12,
+    "shot_3_blocks": 12,
+    "total_blocks": 48,
+    "rationale_zh": "Shot 1 保持 24 blocks 建立主体与视觉锚点；Shot 2 调整为 12 blocks，使主体缺席区间介于 V2 的 16 blocks 与 V3 的 8 blocks 之间；Shot 3 调整为 12 blocks，在总长 48 blocks 下形成中等记忆间隔难度。"
+  }
+}

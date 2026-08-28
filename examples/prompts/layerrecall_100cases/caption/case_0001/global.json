@@ -1,0 +1,92 @@
+{
+  "case_id": "case_0001",
+  "title_zh": "雨夜窗边的吉他手",
+  "memory_axis": "subject_identity",
+  "primary_subject_zh": "年轻女吉他手",
+  "primary_anchor_zh": "椭圆脸、短黑卷发和深红色主外套",
+  "story_reason_zh": "她暂时离开座位去取乐谱，随后回来继续练习",
+  "shot_design": [
+    {
+      "shot": 1,
+      "role_zh": "建立主体与主要视觉锚点",
+      "outline_zh": "年轻女吉他手在雨夜公寓的窗边，缓慢重复拨动木吉他琴弦。",
+      "subject_state": "visible",
+      "main_action_zh": "缓慢重复拨动木吉他琴弦",
+      "anchor_visibility_zh": "椭圆脸、短黑卷发和深红色主外套占据足够画面面积并清楚可见。",
+      "duration_blocks": 24
+    },
+    {
+      "shot": 2,
+      "role_zh": "形成长期记忆间隔",
+      "outline_zh": "主体经由附近的公寓门口缓慢走出画面；随后呈现空椅、吉他架和合上的乐谱盒。",
+      "subject_state": "visible_to_absent",
+      "main_action_zh": "主体经由附近的公寓门口缓慢走出画面",
+      "connection_to_story_zh": "离场动作与原有故事原因对应，动作缓慢、短距离，镜头保持固定。",
+      "remaining_visual_zh": "空椅、吉他架和合上的乐谱盒",
+      "duration_blocks": 12
+    },
+    {
+      "shot": 3,
+      "role_zh": "重新呈现主体并触发长期召回",
+      "outline_zh": "主体经由附近的公寓门口缓慢走回画面，并停回原活动位置",
+      "subject_state": "absent_to_visible",
+      "main_action_zh": "主体经由附近的公寓门口缓慢走回画面，并停回原活动位置",
+      "visual_correspondence_zh": "Shot 3 重新清楚展示椭圆脸、短黑卷发和深红色主外套，并保持相近景别与主体占比。",
+      "duration_blocks": 12
+    }
+  ],
+  "generation_prompts": [
+    {
+      "shot": 1,
+      "file": "0.json",
+      "caption": "A fixed medium shot frames a young woman with an oval face, short black curls, and a deep red coat beside a rain-streaked apartment window. She repeats a slow, gentle strumming motion on an acoustic guitar. Soft amber lamplight warms the quiet room."
+    },
+    {
+      "shot": 2,
+      "file": "1.json",
+      "caption": "A fixed medium shot shows a young woman with an oval face, short black curls, and a deep red coat walking slowly through a nearby apartment doorway until she leaves the frame. The fixed camera then holds on the empty chair, the guitar stand, and a closed music case beside the rain-streaked window. Raindrops slide slowly down the glass."
+    },
+    {
+      "shot": 3,
+      "file": "2.json",
+      "caption": "A fixed medium shot shows a young woman with an oval face, short black curls, and a deep red coat walking slowly back through the nearby apartment doorway and settling beside a rain-streaked apartment window."
+    }
+  ],
+  "review_constraints": {
+    "fixed_camera_all_shots": true,
+    "one_main_action_per_shot": true,
+    "shot_2_target_absent": true,
+    "single_memory_axis": true,
+    "duration_blocks": [
+      24,
+      12,
+      12
+    ],
+    "explicit_exit_action_in_shot_2": true,
+    "explicit_return_action_in_shot_3": true,
+    "shot_2_end_state_target_absent": true,
+    "transition_is_natural_and_non_abrupt": true,
+    "one_primary_transition_action_plus_optional_ambient_motion": true,
+    "shorter_memory_gap_than_v2": true,
+    "captions_unchanged_from_v2": true,
+    "longer_memory_gap_than_v3": true,
+    "memory_gap_intermediate_between_v2_and_v3": true,
+    "captions_unchanged_from_v3": true
+  },
+  "version": "v4_intermediate_memory_gap",
+  "adapted_from_bank_root_relative": "../prompt_bank_v3/caption/case_0001",
+  "transition_design": {
+    "mode": "natural_walk_exit_return",
+    "shot_2_exit_action_zh": "主体经由附近的公寓门口缓慢走出画面",
+    "shot_2_remaining_visual_zh": "空椅、吉他架和合上的乐谱盒",
+    "shot_3_return_action_zh": "主体经由附近的公寓门口缓慢走回画面，并停回原活动位置",
+    "design_note_zh": "Shot 2 在固定镜头内先展示自然离场，再保留背景；Shot 3 用对应动作让主体回到画面。"
+  },
+  "duration_design": {
+    "shot_1_blocks": 24,
+    "shot_2_blocks": 12,
+    "shot_3_blocks": 12,
+    "total_blocks": 48,
+    "rationale_zh": "Shot 1 保持 24 blocks 建立主体与视觉锚点；Shot 2 调整为 12 blocks，使主体缺席区间介于 V2 的 16 blocks 与 V3 的 8 blocks 之间；Shot 3 调整为 12 blocks，在总长 48 blocks 下形成中等记忆间隔难度。"
+  }
+}

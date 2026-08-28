@@ -1,0 +1,66 @@
+# LayerRecall inference. Set selection_mode to hard or soft at runtime.
+
+YX_wan_model_root: "${oc.env:WAN_MODEL_ROOT}"
+
+model_kwargs:
+  model_name: Wan2.2-TI2V-5B
+  YX_wan_model_root: "${oc.env:WAN_MODEL_ROOT}"
+  timestep_shift: 5.0
+  num_frame_per_block: 8
+  local_attn_size: 32
+
+use_ema: false
+output_folder: "${oc.env:EVAL_OUTPUT_DIR,outputs/inference}"
+num_samples: 1
+save_latents_only: false
+save_with_index: true
+inference_iter: 0
+
+data:
+  data_path: "${oc.env:EVAL_DATA_ROOT}"
+  image_or_video_shape: [1, 384, 48, 44, 80]
+
+inference:
+  sampling_steps: 4
+  text_encoder_batch_size: 4
+  sink_size: 8
+  local_attn_size: 32
+  guidance_scale: 1.0
+  multi_shot_sink: false
+  multi_shot_rope_offset: 0
+  context_noise: 0
+  streaming_vae: true
+  async_vae: false
+  vae_type: wan
+  diffusion_device: cuda:0
+  vae_device: cuda:1
+
+layer_recall:
+  layer_recall_enabled: true
+  layer_recall_selection_mode: hard
+  layer_recall_temperature: 1.0
+  layer_recall_candidate_pool_size: 8
+  layer_recall_normalize_scores: true
+  layer_recall_score_mode: cosine
+  layer_recall_physical_cache_frames: 80
+  layer_recall_current_conditioned_enabled: true
+  layer_recall_current_hidden_dim: 512
+  layer_recall_current_alpha: 0.1
+  layer_recall_current_detach_summary: true
+  layer_recall_current_zero_init: true
+  layer_recall_use_layer_gamma: true
+  memory_sensitive_layers: [4, 9, 10, 12, 13, 15, 16, 17, 18, 26]
+  layer_recall_log_selection_detail: false
+  layer_recall_selection_sample_interval: 0
+  layer_recall_log_path: ""
+
+checkpoints:
+  generator_ckpt: "${oc.env:LONGLIVE2_CHECKPOINT}"
+  layer_recall_ckpt: "${oc.env:LAYER_RECALL_CHECKPOINT}"
+
+seed: 0
+num_output_frames: 384
+image_or_video_shape: [1, 384, 48, 44, 80]
+scene_cut_prefix: ""
+diffusion_device: cuda:0
+vae_device: cuda:1

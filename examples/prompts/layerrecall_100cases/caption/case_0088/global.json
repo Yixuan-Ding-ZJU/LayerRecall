@@ -1,0 +1,92 @@
+{
+  "case_id": "case_0088",
+  "title_zh": "左窗旁的画架",
+  "memory_axis": "spatial_position",
+  "primary_subject_zh": "大型木画架",
+  "primary_anchor_zh": "画架位于画室左侧高窗旁",
+  "story_reason_zh": "画架被移去清理，随后放回左侧高窗旁",
+  "shot_design": [
+    {
+      "shot": 1,
+      "role_zh": "建立主体与主要视觉锚点",
+      "outline_zh": "大型木画架在明亮画室的左侧高窗旁，保持静置并承托大画布。",
+      "subject_state": "visible",
+      "main_action_zh": "保持静置并承托大画布",
+      "anchor_visibility_zh": "画架位于画室左侧高窗旁占据足够画面面积并清楚可见。",
+      "duration_blocks": 24
+    },
+    {
+      "shot": 2,
+      "role_zh": "形成长期记忆间隔",
+      "outline_zh": "画家缓慢搬起画架并从画室门口离开画面；随后呈现高窗及其旁边的空地。",
+      "subject_state": "visible_to_absent",
+      "main_action_zh": "画家缓慢搬起画架并从画室门口离开画面",
+      "connection_to_story_zh": "离场动作与原有故事原因对应，动作缓慢、短距离，镜头保持固定。",
+      "remaining_visual_zh": "高窗及其旁边的空地",
+      "duration_blocks": 12
+    },
+    {
+      "shot": 3,
+      "role_zh": "重新呈现主体并触发长期召回",
+      "outline_zh": "画家缓慢将画架搬回画面并放在画室左侧高窗旁",
+      "subject_state": "absent_to_visible",
+      "main_action_zh": "画家缓慢将画架搬回画面并放在画室左侧高窗旁",
+      "visual_correspondence_zh": "Shot 3 恢复画架位于画室左侧高窗旁，参照物保持清楚可见。",
+      "duration_blocks": 12
+    }
+  ],
+  "generation_prompts": [
+    {
+      "shot": 1,
+      "file": "0.json",
+      "caption": "A fixed wide shot frames a large wooden easel holding a broad canvas beside the tall window on the left side of a bright studio. The easel remains still."
+    },
+    {
+      "shot": 2,
+      "file": "1.json",
+      "caption": "A fixed wide shot shows a large wooden easel holding a broad canvas beside the tall window on the left side of a bright studio. An artist slowly carries the easel through the studio doorway and out of frame. The fixed camera then holds on the tall left-side window and the empty floor beside it. A thin curtain moves gently."
+    },
+    {
+      "shot": 3,
+      "file": "2.json",
+      "caption": "A fixed wide shot holds on the tall left-side window and the empty floor beside it. An artist slowly carries a large wooden easel with a broad canvas back into frame and places it beside the tall window on the left side of the studio."
+    }
+  ],
+  "review_constraints": {
+    "fixed_camera_all_shots": true,
+    "one_main_action_per_shot": true,
+    "shot_2_target_absent": true,
+    "single_memory_axis": true,
+    "duration_blocks": [
+      24,
+      12,
+      12
+    ],
+    "explicit_exit_action_in_shot_2": true,
+    "explicit_return_action_in_shot_3": true,
+    "shot_2_end_state_target_absent": true,
+    "transition_is_natural_and_non_abrupt": true,
+    "one_primary_transition_action_plus_optional_ambient_motion": true,
+    "shorter_memory_gap_than_v2": true,
+    "captions_unchanged_from_v2": true,
+    "longer_memory_gap_than_v3": true,
+    "memory_gap_intermediate_between_v2_and_v3": true,
+    "captions_unchanged_from_v3": true
+  },
+  "version": "v4_intermediate_memory_gap",
+  "adapted_from_bank_root_relative": "../prompt_bank_v3/caption/case_0088",
+  "transition_design": {
+    "mode": "positioned_object_exit_return",
+    "shot_2_exit_action_zh": "画家缓慢搬起画架并从画室门口离开画面",
+    "shot_2_remaining_visual_zh": "高窗及其旁边的空地",
+    "shot_3_return_action_zh": "画家缓慢将画架搬回画面并放在画室左侧高窗旁",
+    "design_note_zh": "Shot 2 在固定镜头内先展示自然离场，再保留背景；Shot 3 用对应动作让主体回到画面。"
+  },
+  "duration_design": {
+    "shot_1_blocks": 24,
+    "shot_2_blocks": 12,
+    "shot_3_blocks": 12,
+    "total_blocks": 48,
+    "rationale_zh": "Shot 1 保持 24 blocks 建立主体与视觉锚点；Shot 2 调整为 12 blocks，使主体缺席区间介于 V2 的 16 blocks 与 V3 的 8 blocks 之间；Shot 3 调整为 12 blocks，在总长 48 blocks 下形成中等记忆间隔难度。"
+  }
+}

@@ -1,0 +1,129 @@
+# CHPM training with Streaming Ulysses SP=2.
+# The launcher controls world size; world_size / 2 is the data-parallel size.
+
+infra:
+  sequence_parallel_size: 2
+  streaming_sequence_parallel_mode: ulysses_chunk
+  sharding_strategy: hybrid_full
+  mixed_precision: true
+  gradient_checkpointing: true
+  generator_fsdp_wrap_strategy: transformer
+  teacher_fsdp_wrap_strategy: none
+  text_encoder_fsdp_wrap_strategy: size
+
+model_kwargs:
+  model_name: Wan2.2-TI2V-5B
+  YX_wan_model_root: "${oc.env:WAN_MODEL_ROOT}"
+  timestep_shift: 5.0
+  num_frame_per_block: 8
+  local_attn_size: 32
+
+student_model_kwargs:
+  model_name: Wan2.2-TI2V-5B
+  YX_wan_model_root: "${oc.env:WAN_MODEL_ROOT}"
+  timestep_shift: 5.0
+  num_frame_per_block: 8
+  local_attn_size: 32
+
+teacher_model_kwargs:
+  model_name: Wan2.2-TI2V-5B
+  YX_wan_model_root: "${oc.env:WAN_MODEL_ROOT}"
+  timestep_shift: 5.0
+  num_frame_per_block: 8
+  local_attn_size: 336
+
+checkpoints:
+  generator_ckpt: "${oc.env:LONGLIVE2_CHECKPOINT}"
+  student_ckpt: "${oc.env:LONGLIVE2_CHECKPOINT}"
+  teacher_ckpt: "${oc.env:LONGLIVE2_CHECKPOINT}"
+  layer_recall_init_ckpt: null
+  lora_ckpt: null
+
+algorithm:
+  trainer: chpm
+  objective: chpm
+  teacher_student: true
+  trainable_param_filter: layer_recall_only
+
+chpm:
+  prediction_target: denoised_latent
+  clean_latent_source: teacher_rollout
+  anchor_every_n_frames: 64
+  anchor_include_last_chunk: true
+  teacher_target_device: cpu
+  teacher_cpu_offload: true
+  teacher_runtime_cpu_offload: true
+  loss_type: mse
+  allow_gradient_checkpointing: false
+  teacher_local_attn_size: 336
+  student_local_attn_size: 32
+  student_physical_cache_frames: 80
+  teacher_physical_cache_frames: 336
+  min_history_chunks: 1
+  prediction_loss_weight: 1.0
+  regularization_weight: 1.0e-4
+  layer_recall_replicated_params: true
+  sp_parity_capture_enabled: false
+  sp_parity_capture_full_tensors: false
+
+training:
+  lr: 1.0e-5
+  weight_decay: 0.0
+  beta1: 0.0
+  beta2: 0.999
+  batch_size: 1
+  gradient_accumulation_steps: 1
+  max_grad_norm: 10.0
+  log_iters: 50
+  exact_resume_enabled: true
+  no_save: false
+  max_checkpoints: 10
+  max_iters: 648
+  gc_interval: 25
+  progress_bar: true
+  min_num_training_frames: 384
+  num_training_frames: 384
+  slice_last_frames: 384
+
+data:
+  data_path: "${oc.env:DATA_ROOT}"
+  eval_data_path: "${oc.env:DATA_ROOT}"
+  chunks_per_shot: 0
+  scene_cut_prefix: ""
+  num_workers: 2
+  image_or_video_shape: [1, 384, 48, 44, 80]
+
+inference:
+  sink_size: 8
+  local_attn_size: 32
+  multi_shot_sink: false
+  multi_shot_rope_offset: 0
+
+layer_recall:
+  layer_recall_enabled: true
+  layer_recall_selection_mode: straight_through_topk
+  layer_recall_temperature: 1.0
+  layer_recall_candidate_pool_size: 8
+  layer_recall_normalize_scores: true
+  layer_recall_score_mode: cosine
+  layer_recall_physical_cache_frames: 80
+  layer_recall_current_conditioned_enabled: true
+  layer_recall_current_hidden_dim: 512
+  layer_recall_current_alpha: 0.1
+  layer_recall_current_detach_summary: true
+  layer_recall_current_zero_init: true
+  layer_recall_use_layer_gamma: true
+  memory_sensitive_layers: [4, 9, 10, 12, 13, 15, 16, 17, 18, 26]
+  layer_recall_log_selection_detail: false
+  layer_recall_selection_sample_interval: 0
+  layer_recall_log_path: ""
+
+adapter: null
+merge_lora: false
+
+logging:
+  seed: 0
+  model_init_seed: 0
+  data_seed: 0
+  wandb_entity: null
+  wandb_project: LayerRecall-CHPM
