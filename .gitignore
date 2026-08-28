@@ -43,6 +43,7 @@ YX_analysis/
 *.npz
 *.png
 *.jpg
+!partial_demo/*.jpg
 *.jpeg
 *.webp
 *.gif

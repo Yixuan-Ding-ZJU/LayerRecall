@@ -32,22 +32,22 @@ A brief selection of LayerRecall results is shown below. Visit the [project page
 <table>
   <tr>
     <td width="50%" align="center">
-      <video src="partial_demo/showcase-01-memory-cue-recall-highlight-v2-hq.mp4" width="100%" controls muted loop playsinline></video><br>
-      <strong>Memory Cue Recall</strong>
+      <a href="partial_demo/showcase-01-memory-cue-recall-highlight-v2-hq.mp4"><img src="partial_demo/showcase-01-memory-cue-recall-highlight-v2-hq.jpg" width="100%" alt="Memory Cue Recall"></a><br>
+      <strong>Memory Cue Recall</strong> · <a href="partial_demo/showcase-01-memory-cue-recall-highlight-v2-hq.mp4">Play video</a>
     </td>
     <td width="50%" align="center">
-      <video src="partial_demo/showcase-02-stained-glass-reader-memory-recall-highlight-hq.mp4" width="100%" controls muted loop playsinline></video><br>
-      <strong>Stained-Glass Reader</strong>
+      <a href="partial_demo/showcase-02-stained-glass-reader-memory-recall-highlight-hq.mp4"><img src="partial_demo/showcase-02-stained-glass-reader-memory-recall-highlight-hq.jpg" width="100%" alt="Stained-Glass Reader"></a><br>
+      <strong>Stained-Glass Reader</strong> · <a href="partial_demo/showcase-02-stained-glass-reader-memory-recall-highlight-hq.mp4">Play video</a>
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
-      <video src="partial_demo/showcase-03-twilight-lighthouse-keeper-memory-recall-highlight-hq.mp4" width="100%" controls muted loop playsinline></video><br>
-      <strong>Twilight Lighthouse Keeper</strong>
+      <a href="partial_demo/showcase-03-twilight-lighthouse-keeper-memory-recall-highlight-hq.mp4"><img src="partial_demo/showcase-03-twilight-lighthouse-keeper-memory-recall-highlight-hq.jpg" width="100%" alt="Twilight Lighthouse Keeper"></a><br>
+      <strong>Twilight Lighthouse Keeper</strong> · <a href="partial_demo/showcase-03-twilight-lighthouse-keeper-memory-recall-highlight-hq.mp4">Play video</a>
     </td>
     <td width="50%" align="center">
-      <video src="partial_demo/showcase-10-paper-craft-studio-memory-recall-highlight-hq.mp4" width="100%" controls muted loop playsinline></video><br>
-      <strong>Paper-Craft Studio</strong>
+      <a href="partial_demo/showcase-10-paper-craft-studio-memory-recall-highlight-hq.mp4"><img src="partial_demo/showcase-10-paper-craft-studio-memory-recall-highlight-hq.jpg" width="100%" alt="Paper-Craft Studio"></a><br>
+      <strong>Paper-Craft Studio</strong> · <a href="partial_demo/showcase-10-paper-craft-studio-memory-recall-highlight-hq.mp4">Play video</a>
     </td>
   </tr>
 </table>
