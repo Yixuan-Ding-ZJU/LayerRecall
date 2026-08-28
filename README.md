@@ -240,7 +240,6 @@ and an optional `shot_durations.txt` file.
         ├── 0.json
         ├── 1.json
         ├── 2.json
-        ├── global.json
         └── shot_durations.txt
 ```
 
@@ -251,9 +250,7 @@ Each JSON file contains a `caption` field:
 ```
 
 `shot_durations.txt` specifies the number of 8-frame latent chunks assigned to
-each shot. If it is absent, the 48 chunks are distributed evenly. The optional
-`global.json` stores prompt-design metadata and is ignored by the inference
-loader.
+each shot. If it is absent, the 48 chunks are distributed evenly.
 
 ---
 
