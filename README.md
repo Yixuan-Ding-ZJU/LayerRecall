@@ -11,7 +11,7 @@ Yixuan Ding<sup>1</sup>, Jiahao Kong<sup>1</sup>, Wei Huang<sup>2</sup>, Ruijie 
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![GitHub](https://img.shields.io/badge/GitHub-LayerRecall-181717?logo=github)](https://github.com/Yixuan-Ding-ZJU/LayerRecall)
 [![Project Page](https://img.shields.io/badge/Project-Page-0A66C2?logo=googlechrome&logoColor=white)](https://yixuan-ding-zju.github.io/LayerRecall_Web/)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Model_PLACEHOLDER-yellow)](https://huggingface.co/PLACEHOLDER)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-LayerRecall-yellow)](https://huggingface.co/Yixuan-Ding-ZJU/LayerRecall)
 
 </div>
 
@@ -169,7 +169,8 @@ hf download <LONGLIVE2_HUGGINGFACE_REPO> \
   --local-dir <PATH_TO_LONGLIVE2_CHECKPOINT_DIRECTORY>
 
 # LayerRecall checkpoint
-hf download <LAYERRECALL_HUGGINGFACE_REPO> \
+hf download Yixuan-Ding-ZJU/LayerRecall \
+  layer_recall_chpm_v3_step200.pt \
   --local-dir <PATH_TO_LAYERRECALL_CHECKPOINT_DIRECTORY>
 ```
 
