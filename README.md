@@ -164,12 +164,12 @@ LayerRecall requires three model assets:
 
 ```bash
 # Wan2.2-TI2V-5B
-hf download <WAN2_2_TI2V_5B_HUGGINGFACE_REPO> \
+hf download Wan-AI/Wan2.2-TI2V-5B \
   --local-dir <PATH_TO_WAN2_2_TI2V_5B>
 
 # LongLive2 generator
-hf download <LONGLIVE2_HUGGINGFACE_REPO> \
-  <LONGLIVE2_MERGED_GENERATOR_FILENAME> \
+hf download Efficient-Large-Model/LongLive-2.0-5B \
+  model_bf16.pt \
   --local-dir <PATH_TO_LONGLIVE2_CHECKPOINT_DIRECTORY>
 
 # LayerRecall checkpoint
