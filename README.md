@@ -17,9 +17,9 @@ Yixuan Ding<sup>1</sup>, Jiahao Kong<sup>1</sup>, Wei Huang<sup>2</sup>, Ruijie 
 
 ## 🔥 News
 
-- LayerRecall paper released on arXiv.
-- LayerRecall module weight released on [Hugging Face](https://huggingface.co/Yixuan-Ding-ZJU/LayerRecall).
-- LayerRecall project page is available.
+- **2026-08-28**: LayerRecall paper released on arXiv.
+- **2026-08-28**: LayerRecall module weight released on [Hugging Face](https://huggingface.co/Yixuan-Ding-ZJU/LayerRecall).
+- **2026-08-28**: LayerRecall project page is available.
 
 ## 📖 Abstract
 
