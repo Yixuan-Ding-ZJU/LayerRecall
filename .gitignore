@@ -42,6 +42,8 @@ YX_analysis/
 *.npy
 *.npz
 *.png
+!assets/
+!assets/table1_primary_evaluation.png
 *.jpg
 !partial_demo/*.jpg
 *.jpeg

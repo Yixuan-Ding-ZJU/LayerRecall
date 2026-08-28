@@ -54,45 +54,9 @@ A brief selection of LayerRecall results is shown below. Visit the [project page
 
 ## 📊 Primary Evaluation
 
-<table>
-  <thead>
-    <tr>
-      <th rowspan="2">Method</th>
-      <th rowspan="2">Venue</th>
-      <th rowspan="2">VBench-Long<br>Avg. ↑</th>
-      <th colspan="4">MemoBench ↑</th>
-      <th colspan="4">MovieBench ↑</th>
-    </tr>
-    <tr>
-      <th>Overall</th>
-      <th>Obj.<br>Reapp.</th>
-      <th>Layout<br>Rec.</th>
-      <th>State<br>Upd.</th>
-      <th>Overall</th>
-      <th>Shot<br>Coh.</th>
-      <th>Scene<br>Layout</th>
-      <th>Narrative</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>LongLive</td><td>ICLR26</td><td>0.977</td><td>0.499</td><td>0.516</td><td>0.534</td><td>0.464</td><td>0.544</td><td>0.491</td><td>0.624</td><td>0.509</td></tr>
-    <tr><td>LongLive-2.0</td><td>arXiv26</td><td>0.978</td><td>0.513</td><td><u>0.519</u></td><td>0.524</td><td><u>0.499</u></td><td>0.546</td><td><u>0.531</u></td><td>0.596</td><td><u>0.517</u></td></tr>
-    <tr><td>LongLive-RAG</td><td>arXiv26</td><td>0.958</td><td>0.373</td><td>0.358</td><td>0.360</td><td>0.297</td><td>0.394</td><td>0.352</td><td>0.436</td><td>0.355</td></tr>
-    <tr><td>CausVid</td><td>CVPR25</td><td>0.975</td><td>0.426</td><td>0.418</td><td>0.414</td><td>0.400</td><td>0.483</td><td>0.489</td><td>0.495</td><td>0.450</td></tr>
-    <tr><td>Deep Forcing</td><td>ICML26</td><td>0.964</td><td>0.408</td><td>0.371</td><td>0.441</td><td>0.405</td><td>0.511</td><td>0.473</td><td>0.583</td><td>0.427</td></tr>
-    <tr><td>Dummy Forcing</td><td>arXiv26</td><td>0.953</td><td>0.417</td><td>0.427</td><td>0.410</td><td>0.407</td><td>0.494</td><td>0.480</td><td>0.486</td><td>0.502</td></tr>
-    <tr><td>Self-Forcing</td><td>NeurIPS25</td><td>0.976</td><td>0.327</td><td>0.316</td><td>0.346</td><td>0.293</td><td>0.363</td><td>0.292</td><td>0.371</td><td>0.344</td></tr>
-    <tr><td>MemFlow</td><td>arXiv25</td><td><u>0.981</u></td><td><u>0.531</u></td><td>0.516</td><td><strong>0.573</strong></td><td>0.492</td><td>0.542</td><td>0.480</td><td>0.630</td><td>0.504</td></tr>
-    <tr><td>Rolling Forcing</td><td>ICLR26</td><td>0.972</td><td>0.482</td><td>0.498</td><td>0.483</td><td>0.481</td><td><u>0.548</u></td><td>0.505</td><td>0.608</td><td>0.510</td></tr>
-    <tr><td>Context Forcing</td><td>ICML26</td><td>0.971</td><td>0.417</td><td>0.421</td><td>0.455</td><td>0.401</td><td>0.463</td><td>0.421</td><td>0.497</td><td>0.440</td></tr>
-    <tr><td>HiAR</td><td>arXiv26</td><td>0.969</td><td>0.424</td><td>0.347</td><td>0.454</td><td>0.429</td><td>0.495</td><td>0.364</td><td><u>0.646</u></td><td>0.385</td></tr>
-    <tr><td>Infinity-RoPE</td><td>CVPR26</td><td>0.978</td><td>0.455</td><td>0.408</td><td>0.536</td><td>0.477</td><td>0.513</td><td>0.446</td><td>0.589</td><td>0.445</td></tr>
-    <tr><td>SkyReels-V2</td><td>arXiv25</td><td><strong>0.992</strong></td><td>0.466</td><td>0.404</td><td>0.489</td><td>0.463</td><td>0.508</td><td>0.400</td><td><strong>0.665</strong></td><td>0.380</td></tr>
-    <tr><td><strong>LayerRecall</strong></td><td>-</td><td>0.978</td><td><strong>0.548</strong></td><td><strong>0.571</strong></td><td><u>0.572</u></td><td><strong>0.525</strong></td><td><strong>0.578</strong></td><td><strong>0.579</strong></td><td>0.619</td><td><strong>0.561</strong></td></tr>
-  </tbody>
-</table>
-
-*Main results on the videos generated from 100 evaluation prompts. VBench-Long Avg. is the mean of VBench-Long subject consistency, background consistency, and motion smoothness. MemoBench and MovieBench provide task-aligned memory diagnostics. Bold and underline denote the best and second-best scores.*
+<p align="center">
+  <img src="assets/table1_primary_evaluation.png" width="100%" alt="LayerRecall primary evaluation results on VBench-Long, MemoBench, and MovieBench">
+</p>
 
 ---
 
@@ -118,6 +82,8 @@ LayerRecall/
 ├── requirements-dev.txt                  # Test dependencies
 ├── inference.py                          # LayerRecall inference entry
 ├── train.py                              # Training entry
+│
+├── assets/                               # README figures
 │
 ├── configs/
 │   ├── paths.env.example                 # Machine-specific path template
