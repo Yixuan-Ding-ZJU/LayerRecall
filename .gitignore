@@ -28,6 +28,8 @@ YX_analysis/
 *.out
 *.err
 *.mp4
+!partial_demo/
+!partial_demo/*.mp4
 *.avi
 *.mov
 *.mkv

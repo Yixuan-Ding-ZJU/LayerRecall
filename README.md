@@ -1,6 +1,102 @@
-# LayerRecall
+<div align="center">
 
-# Usage
+# LayerRecall: A State-Conditioned Memory Router for Long-Horizon Consistency in Video Generation
+
+Yixuan Ding<sup>1</sup>, Jiahao Kong<sup>1</sup>, Wei Huang<sup>2</sup>, Ruijie Quan<sup>1,*</sup>, Yi Yang<sup>1</sup>
+
+<sup>1</sup>Zhejiang University &nbsp;&nbsp; <sup>2</sup>The University of Hong Kong
+
+<sup>*</sup>Corresponding author
+
+[![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![GitHub](https://img.shields.io/badge/GitHub-LayerRecall-181717?logo=github)](https://github.com/Yixuan-Ding-ZJU/LayerRecall)
+[![Project Page](https://img.shields.io/badge/Project-Page-0A66C2?logo=googlechrome&logoColor=white)](https://yixuan-ding-zju.github.io/LayerRecall_Web/)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Model_PLACEHOLDER-yellow)](https://huggingface.co/PLACEHOLDER)
+
+</div>
+
+## 🔥 News
+
+- LayerRecall paper released on arXiv.
+- LayerRecall module weight released on huggingface.
+- LayerRecall project page is available.
+
+## 📖 Abstract
+
+Autoregressive video diffusion enables scalable long-video generation by producing chunks from a bounded recent context. While recency-based caching preserves local continuity, it evicts historical cues needed when subjects, objects, scenes, or attributes reappear. Existing memory mechanisms expose models to nonlocal history, but access alone does not ensure effective use. Our analysis reveals that video DiT layers exhibit distinct preferences for current, recent, and distant context, suggesting that long-range memory requires deciding both *what to retrieve* and *where to use it*. We introduce **LayerRecall, a current-conditioned, layer-selective memory router** that retrieves relevant historical K/V states and injects them only into backbone-specific memory-sensitive layers while preserving local attention elsewhere. To reduce reliance on scarce high-quality long-horizon videos and explicit memory-allocation labels, we further propose **Cross-Horizon Prediction Matching (CHPM)**, which uses a privileged long-context reference to supervise the bounded-memory router in prediction space. Across 100 multi-shot evaluation prompts, LayerRecall achieves the best overall results on MemoBench and MovieBench while matching its backbone on VBench-Long, demonstrating stronger long-range recovery without sacrificing local continuity. Qualitative analyses further reveal memory-guided self-correction, whereby initially mismatched local attributes return to their historical appearance without resetting ongoing motion or scene structure. Additional analyses show cross-backbone portability and negligible inference overhead.
+
+## 🎬 Quick Look
+
+A brief selection of LayerRecall results is shown below. Visit the [project page](https://yixuan-ding-zju.github.io/LayerRecall_Web/) for more demos.
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <video src="partial_demo/showcase-01-memory-cue-recall-highlight-v2-hq.mp4" width="100%" controls muted loop playsinline></video><br>
+      <strong>Memory Cue Recall</strong>
+    </td>
+    <td width="50%" align="center">
+      <video src="partial_demo/showcase-02-stained-glass-reader-memory-recall-highlight-hq.mp4" width="100%" controls muted loop playsinline></video><br>
+      <strong>Stained-Glass Reader</strong>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <video src="partial_demo/showcase-03-twilight-lighthouse-keeper-memory-recall-highlight-hq.mp4" width="100%" controls muted loop playsinline></video><br>
+      <strong>Twilight Lighthouse Keeper</strong>
+    </td>
+    <td width="50%" align="center">
+      <video src="partial_demo/showcase-10-paper-craft-studio-memory-recall-highlight-hq.mp4" width="100%" controls muted loop playsinline></video><br>
+      <strong>Paper-Craft Studio</strong>
+    </td>
+  </tr>
+</table>
+
+## 📊 Primary Evaluation
+
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Method</th>
+      <th rowspan="2">Venue</th>
+      <th rowspan="2">VBench-Long<br>Avg. ↑</th>
+      <th colspan="4">MemoBench ↑</th>
+      <th colspan="4">MovieBench ↑</th>
+    </tr>
+    <tr>
+      <th>Overall</th>
+      <th>Obj.<br>Reapp.</th>
+      <th>Layout<br>Rec.</th>
+      <th>State<br>Upd.</th>
+      <th>Overall</th>
+      <th>Shot<br>Coh.</th>
+      <th>Scene<br>Layout</th>
+      <th>Narrative</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>LongLive</td><td>ICLR26</td><td>0.977</td><td>0.499</td><td>0.516</td><td>0.534</td><td>0.464</td><td>0.544</td><td>0.491</td><td>0.624</td><td>0.509</td></tr>
+    <tr><td>LongLive-2.0</td><td>arXiv26</td><td>0.978</td><td>0.513</td><td><u>0.519</u></td><td>0.524</td><td><u>0.499</u></td><td>0.546</td><td><u>0.531</u></td><td>0.596</td><td><u>0.517</u></td></tr>
+    <tr><td>LongLive-RAG</td><td>arXiv26</td><td>0.958</td><td>0.373</td><td>0.358</td><td>0.360</td><td>0.297</td><td>0.394</td><td>0.352</td><td>0.436</td><td>0.355</td></tr>
+    <tr><td>CausVid</td><td>CVPR25</td><td>0.975</td><td>0.426</td><td>0.418</td><td>0.414</td><td>0.400</td><td>0.483</td><td>0.489</td><td>0.495</td><td>0.450</td></tr>
+    <tr><td>Deep Forcing</td><td>ICML26</td><td>0.964</td><td>0.408</td><td>0.371</td><td>0.441</td><td>0.405</td><td>0.511</td><td>0.473</td><td>0.583</td><td>0.427</td></tr>
+    <tr><td>Dummy Forcing</td><td>arXiv26</td><td>0.953</td><td>0.417</td><td>0.427</td><td>0.410</td><td>0.407</td><td>0.494</td><td>0.480</td><td>0.486</td><td>0.502</td></tr>
+    <tr><td>Self-Forcing</td><td>NeurIPS25</td><td>0.976</td><td>0.327</td><td>0.316</td><td>0.346</td><td>0.293</td><td>0.363</td><td>0.292</td><td>0.371</td><td>0.344</td></tr>
+    <tr><td>MemFlow</td><td>arXiv25</td><td><u>0.981</u></td><td><u>0.531</u></td><td>0.516</td><td><strong>0.573</strong></td><td>0.492</td><td>0.542</td><td>0.480</td><td>0.630</td><td>0.504</td></tr>
+    <tr><td>Rolling Forcing</td><td>ICLR26</td><td>0.972</td><td>0.482</td><td>0.498</td><td>0.483</td><td>0.481</td><td><u>0.548</u></td><td>0.505</td><td>0.608</td><td>0.510</td></tr>
+    <tr><td>Context Forcing</td><td>ICML26</td><td>0.971</td><td>0.417</td><td>0.421</td><td>0.455</td><td>0.401</td><td>0.463</td><td>0.421</td><td>0.497</td><td>0.440</td></tr>
+    <tr><td>HiAR</td><td>arXiv26</td><td>0.969</td><td>0.424</td><td>0.347</td><td>0.454</td><td>0.429</td><td>0.495</td><td>0.364</td><td><u>0.646</u></td><td>0.385</td></tr>
+    <tr><td>Infinity-RoPE</td><td>CVPR26</td><td>0.978</td><td>0.455</td><td>0.408</td><td>0.536</td><td>0.477</td><td>0.513</td><td>0.446</td><td>0.589</td><td>0.445</td></tr>
+    <tr><td>SkyReels-V2</td><td>arXiv25</td><td><strong>0.992</strong></td><td>0.466</td><td>0.404</td><td>0.489</td><td>0.463</td><td>0.508</td><td>0.400</td><td><strong>0.665</strong></td><td>0.380</td></tr>
+    <tr><td><strong>LayerRecall</strong></td><td>-</td><td>0.978</td><td><strong>0.548</strong></td><td><strong>0.571</strong></td><td><u>0.572</u></td><td><strong>0.525</strong></td><td><strong>0.578</strong></td><td><strong>0.579</strong></td><td>0.619</td><td><strong>0.561</strong></td></tr>
+  </tbody>
+</table>
+
+*Main results on the videos generated from 100 evaluation prompts. VBench-Long Avg. is the mean of VBench-Long subject consistency, background consistency, and motion smoothness. MemoBench and MovieBench provide task-aligned memory diagnostics. Bold and underline denote the best and second-best scores.*
+
+---
+
+# 🚀 Usage
 
 ## Table of Contents
 
@@ -34,6 +130,8 @@ LayerRecall/
 ├── examples/
 │   └── prompts/layerrecall_100cases/      # Released 100-case prompt bank
 │       └── caption/case_XXXX/             # Three-shot structured prompts
+│
+├── partial_demo/                          # README quick-look videos
 │
 ├── scripts/
 │   └── train_chpm.sh                     # Single-node/multi-node launcher
