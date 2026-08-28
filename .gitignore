@@ -48,6 +48,7 @@ YX_analysis/
 !partial_demo/*.jpg
 *.jpeg
 *.webp
+!partial_demo/*.webp
 *.gif
 *.wandb
 

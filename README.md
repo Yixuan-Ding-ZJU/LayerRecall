@@ -27,27 +27,27 @@ Autoregressive video diffusion enables scalable long-video generation by produci
 
 ## 🎬 Quick Look
 
-A brief selection of LayerRecall results is shown below. Visit the [project page](https://yixuan-ding-zju.github.io/LayerRecall_Web/) for more demos.
+A brief selection of LayerRecall results is shown below. The previews autoplay and loop; click one to open the full-resolution MP4. Visit the [project page](https://yixuan-ding-zju.github.io/LayerRecall_Web/) for more demos.
 
 <table>
   <tr>
     <td width="50%" align="center">
-      <a href="partial_demo/showcase-01-memory-cue-recall-highlight-v2-hq.mp4"><img src="partial_demo/showcase-01-memory-cue-recall-highlight-v2-hq.jpg" width="100%" alt="Memory Cue Recall"></a><br>
-      <strong>Memory Cue Recall</strong> · <a href="partial_demo/showcase-01-memory-cue-recall-highlight-v2-hq.mp4">Play video</a>
+      <a href="partial_demo/showcase-01-memory-cue-recall-highlight-v2-hq.mp4"><img src="partial_demo/showcase-01-memory-cue-recall-highlight-v2-hq.webp" width="100%" alt="Memory Cue Recall animated preview"></a><br>
+      <strong>Memory Cue Recall</strong> · <a href="partial_demo/showcase-01-memory-cue-recall-highlight-v2-hq.mp4">Full video</a>
     </td>
     <td width="50%" align="center">
-      <a href="partial_demo/showcase-02-stained-glass-reader-memory-recall-highlight-hq.mp4"><img src="partial_demo/showcase-02-stained-glass-reader-memory-recall-highlight-hq.jpg" width="100%" alt="Stained-Glass Reader"></a><br>
-      <strong>Stained-Glass Reader</strong> · <a href="partial_demo/showcase-02-stained-glass-reader-memory-recall-highlight-hq.mp4">Play video</a>
+      <a href="partial_demo/showcase-02-stained-glass-reader-memory-recall-highlight-hq.mp4"><img src="partial_demo/showcase-02-stained-glass-reader-memory-recall-highlight-hq.webp" width="100%" alt="Stained-Glass Reader animated preview"></a><br>
+      <strong>Stained-Glass Reader</strong> · <a href="partial_demo/showcase-02-stained-glass-reader-memory-recall-highlight-hq.mp4">Full video</a>
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
-      <a href="partial_demo/showcase-03-twilight-lighthouse-keeper-memory-recall-highlight-hq.mp4"><img src="partial_demo/showcase-03-twilight-lighthouse-keeper-memory-recall-highlight-hq.jpg" width="100%" alt="Twilight Lighthouse Keeper"></a><br>
-      <strong>Twilight Lighthouse Keeper</strong> · <a href="partial_demo/showcase-03-twilight-lighthouse-keeper-memory-recall-highlight-hq.mp4">Play video</a>
+      <a href="partial_demo/showcase-03-twilight-lighthouse-keeper-memory-recall-highlight-hq.mp4"><img src="partial_demo/showcase-03-twilight-lighthouse-keeper-memory-recall-highlight-hq.webp" width="100%" alt="Twilight Lighthouse Keeper animated preview"></a><br>
+      <strong>Twilight Lighthouse Keeper</strong> · <a href="partial_demo/showcase-03-twilight-lighthouse-keeper-memory-recall-highlight-hq.mp4">Full video</a>
     </td>
     <td width="50%" align="center">
-      <a href="partial_demo/showcase-10-paper-craft-studio-memory-recall-highlight-hq.mp4"><img src="partial_demo/showcase-10-paper-craft-studio-memory-recall-highlight-hq.jpg" width="100%" alt="Paper-Craft Studio"></a><br>
-      <strong>Paper-Craft Studio</strong> · <a href="partial_demo/showcase-10-paper-craft-studio-memory-recall-highlight-hq.mp4">Play video</a>
+      <a href="partial_demo/showcase-10-paper-craft-studio-memory-recall-highlight-hq.mp4"><img src="partial_demo/showcase-10-paper-craft-studio-memory-recall-highlight-hq.webp" width="100%" alt="Paper-Craft Studio animated preview"></a><br>
+      <strong>Paper-Craft Studio</strong> · <a href="partial_demo/showcase-10-paper-craft-studio-memory-recall-highlight-hq.mp4">Full video</a>
     </td>
   </tr>
 </table>
