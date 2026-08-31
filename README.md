@@ -8,7 +8,7 @@ Yixuan Ding<sup>1</sup>, Jiahao Kong<sup>1</sup>, Wei Huang<sup>2</sup>, Ruijie 
 
 <sup>*</sup>Corresponding author
 
-[![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![arXiv](https://img.shields.io/badge/arXiv-2608.28460-b31b1b.svg)](https://arxiv.org/abs/2608.28460)
 [![GitHub](https://img.shields.io/badge/GitHub-LayerRecall-181717?logo=github)](https://github.com/Yixuan-Ding-ZJU/LayerRecall)
 [![Project Page](https://img.shields.io/badge/Project-Page-0A66C2?logo=googlechrome&logoColor=white)](https://yixuan-ding-zju.github.io/LayerRecall_Web/)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-LayerRecall-yellow)](https://huggingface.co/Yixuan-Ding-ZJU/LayerRecall)
@@ -17,7 +17,7 @@ Yixuan Ding<sup>1</sup>, Jiahao Kong<sup>1</sup>, Wei Huang<sup>2</sup>, Ruijie 
 
 ## 🔥 News
 
-- **2026-08-28**: LayerRecall paper released on arXiv.
+- **2026-08-28**: LayerRecall paper released on [arXiv](https://arxiv.org/abs/2608.28460).
 - **2026-08-28**: LayerRecall module weight released on [Hugging Face](https://huggingface.co/Yixuan-Ding-ZJU/LayerRecall).
 - **2026-08-28**: LayerRecall project page is available.
 
