@@ -485,3 +485,23 @@ Setting | Description
 - [LongLive](https://github.com/NVlabs/LongLive/tree/v1.0): the original long-video generation framework and codebase we build upon. Thanks for their wonderful work.
 - [LongLive-2.0](https://github.com/NVlabs/LongLive): the training and inference infrastructure used as our primary backbone. Thanks for their wonderful work.
 - [Wan](https://github.com/Wan-Video/Wan2.2): the base video generation model used in this work. Thanks for their wonderful work.
+
+---
+
+## Citation
+
+If you find this work useful, please consider citing:
+
+```bibtex
+@misc{ding2026layerrecallstateconditionedmemoryrouter,
+      title={LayerRecall: A State-Conditioned Memory Router for Long-Horizon Consistency in Video Generation},
+      author={Yixuan Ding and Jiahao Kong and Wei Huang and Ruijie Quan and Yi Yang},
+      year={2026},
+      eprint={2608.28460},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2608.28460},
+}
+```
+
+If you have any questions, please feel free to contact [Yixuan Ding](mailto:yixuan.ding.yolo@gmail.com).
